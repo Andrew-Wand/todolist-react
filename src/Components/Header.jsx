@@ -1,8 +1,17 @@
 import React from 'react'
 
 function Header() {
-  return (
-    <div>Header</div>
+  
+  
+  
+  
+  
+return (
+    <div className="header-container">
+        <h1 className="header-text">
+            To Do List
+        </h1>
+    </div>
   )
 }
 
