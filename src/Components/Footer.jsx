@@ -3,9 +3,11 @@ import React from 'react'
 function Footer() {
   return (
     <div className="footer-container">
-        <h1 className="footer-text">
-            Andrew Wand
-        </h1>
+        <footer>
+            <ul className='footer-list'>
+                <li className='footer-item'>Andrew Wand</li>
+            </ul>
+        </footer>
     </div>
   )
 }
