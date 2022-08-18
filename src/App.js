@@ -17,8 +17,7 @@ function App(props) {
     const updatedTasks = tasks.map(task => {
       // if this task has the same ID as the edited task
       if (id === task.id) {
-        // use object spread to make a new obkect
-        // whose `completed` prop has been inverted
+       
         return {...task, completed: !task.completed}
       }
       return task;
@@ -29,8 +28,7 @@ function App(props) {
 
 
   
-  const taskList = tasks
-  .map(task => (
+  const taskList = tasks.map(task => (
     <ToDoList
       id={task.id}
       name={task.name}
@@ -48,7 +46,7 @@ function App(props) {
     setTasks([...tasks, newTask]);
   }
   
-  
+  const remainingText = `${taskList.length} tasks remaining`;
 
   
   
@@ -58,6 +56,9 @@ function App(props) {
    <div className="App">
       <Header />
       <Form addTask = {addTask}/>
+      <h2 className="remaining-text">
+        {remainingText}
+      </h2>
 
       <ul className="task-list" role="list">
         {taskList}
