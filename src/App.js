@@ -1,16 +1,20 @@
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import Main from "./Components/Main";
-import './App.css';
+import taskList from "./Components/taskList";
+import Form from "./Components/Form";
+import { useState } from "react";
 
-function App() {
+function App(props) {
   
   
   
+  const [tasks, setTasks] = useState(props.tasks);
   
   
-  
-  
+ const addTask = (name) => {
+    const newTask = {id: props.id + 1, name: name, completed: false};
+    setTasks([...tasks, newTask])
+  }
   
   
   
@@ -21,8 +25,12 @@ function App() {
   return (
    <div className="App">
       <Header />
+      <Form addTask = {addTask}/>
 
-      <Main />
+      <ul className="task-list">
+      <taskList />
+      </ul>
+      
 
       <Footer />
    </div>
