@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 
-function Form() {
+function Form(props) {
 
     const [name, setName] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        if (!name.trim()) {
+            return;
+        } 
+        props.addTask(name);
+        setName("");
     }
 
     const handleChange = (e) => {
@@ -17,12 +21,18 @@ function Form() {
 
 
   return (
-    <div className="form-container">
-        <form action="" className="task-form" onSubmit={handleSubmit}>
-            <input type="text" className="task-input" value={name} onChange={handleChange} />
+    
+        <form className="task-form" onSubmit={handleSubmit}>
+            <input type="text" 
+                id='new-todo-input' 
+                className="task-input" 
+                value={name} 
+                onChange={handleChange} 
+                name='text' 
+                />
             <button className="add-btn" type='submit'>Add</button>
         </form>
-    </div>
+   
   )
 }
 
