@@ -16,7 +16,7 @@ function Form(props) {
         props.addTask(name);
         setName("");
        
-        
+       
 
     }
 

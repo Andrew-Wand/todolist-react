@@ -18,6 +18,8 @@ function ToDoList(props) {
     setNewName("");
     
     setIsEdit(false);
+
+
   }
 
   const handleChange = (e) => {

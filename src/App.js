@@ -2,8 +2,18 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import ToDoList from "./Components/ToDoList";
 import Form from "./Components/Form";
+import FilterButton from "./Components/FilterButton";
 import { useEffect, useState } from "react";
 import { nanoid } from 'nanoid'
+
+
+const FILTER_MAP = {
+  All: () => true,
+  ToDo: (task) => !task.completed,
+  Completed: (task) => task.completed
+};
+
+const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
   
@@ -11,9 +21,12 @@ function App(props) {
   
   const [tasks, setTasks] = useState(props.tasks);
   
+  const [filter, setFilter] = useState('All');
  
-  
 
+  const filterList = FILTER_NAMES.map((name) => (
+      <FilterButton key={name} name={name} isPressed={name === filter} setFilter={setFilter}/>
+  ));
   
   
   function toggleTaskCompleted(id) {
@@ -47,7 +60,9 @@ function App(props) {
 
 
   
-  const taskList = tasks.map(task => (
+  const taskList = tasks
+  .filter(FILTER_MAP[filter])
+  .map(task => (
     <ToDoList
       id={task.id}
       name={task.name}
@@ -58,36 +73,32 @@ function App(props) {
       editTask = {editTask}
       
     />
-  ));
+
+  )) ;
   
   
   
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
+
+    
+    // localStorage.setItem('taskList', JSON.stringify([...tasks, newTask]));
     
   }
   
   const remainingText = `${taskList.length} tasks remaining`;
-
-
-
-// Local storage
-  
-
-  
-  
-  
   
   
   return (
    <div className="App">
       <Header />
+      
       <Form addTask = {addTask}/>
       <h2 className="remaining-text">
         {remainingText}
       </h2>
-
+      {filterList}
       <ul className="task-list">
         {taskList}
       </ul>
