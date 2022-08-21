@@ -2,7 +2,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import ToDoList from "./Components/ToDoList";
 import Form from "./Components/Form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nanoid } from 'nanoid'
 
 function App(props) {
@@ -52,6 +52,7 @@ function App(props) {
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask = {deleteTask}
+      editTask = {editTask}
     />
   ));
   
@@ -64,6 +65,22 @@ function App(props) {
   
   const remainingText = `${taskList.length} tasks remaining`;
 
+
+
+// Local storage
+  
+// useEffect(() => {
+//   const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+//   if (tasks) {
+//     props.setTasks(tasks)
+//   }
+// });
+
+// useEffect(() => {
+//   localStorage.setItem('tasks', JSON.stringify(tasks))
+// });
+  
   
   
   
