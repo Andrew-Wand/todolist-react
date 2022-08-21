@@ -11,6 +11,9 @@ function App(props) {
   
   const [tasks, setTasks] = useState(props.tasks);
   
+ 
+  
+
   
   
   function toggleTaskCompleted(id) {
@@ -53,6 +56,7 @@ function App(props) {
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask = {deleteTask}
       editTask = {editTask}
+      
     />
   ));
   
@@ -61,6 +65,7 @@ function App(props) {
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
+    
   }
   
   const remainingText = `${taskList.length} tasks remaining`;
@@ -69,17 +74,7 @@ function App(props) {
 
 // Local storage
   
-// useEffect(() => {
-//   const tasks = JSON.parse(localStorage.getItem('tasks'));
 
-//   if (tasks) {
-//     props.setTasks(tasks)
-//   }
-// });
-
-// useEffect(() => {
-//   localStorage.setItem('tasks', JSON.stringify(tasks))
-// });
   
   
   
@@ -93,7 +88,7 @@ function App(props) {
         {remainingText}
       </h2>
 
-      <ul className="task-list" role="list">
+      <ul className="task-list">
         {taskList}
       </ul>
       

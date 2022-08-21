@@ -16,6 +16,7 @@ function ToDoList(props) {
     } 
     props.editTask(props.id, newName);
     setNewName("");
+    
     setIsEdit(false);
   }
 
@@ -26,7 +27,7 @@ function ToDoList(props) {
   const showEdit = (
     <form action="submit" className="edit-form" onSubmit={handleSubmit}>
         <div>
-          <input type="text" onChange={handleChange}  />
+          <input type="text" onChange={handleChange} defaultValue={props.name} />
         </div>
         <button type='submit'>Save</button>
 
@@ -58,7 +59,7 @@ function ToDoList(props) {
   
 
 
-return <li className="task-item">{isEdit ? props.showEdit : showTaskList}</li>;
+return <li className="task-item">{isEdit ? showEdit : showTaskList}</li>;
     
   
 }
