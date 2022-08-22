@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid'
 
 const FILTER_MAP = {
   All: () => true,
-  ToDo: (task) => !task.completed,
+  Incomplete: (task) => !task.completed,
   Completed: (task) => task.completed
 };
 
