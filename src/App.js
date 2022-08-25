@@ -20,7 +20,7 @@ function App(props) {
   
   
   const [tasks, setTasks] = useState(props.tasks);
-  
+
   const [filter, setFilter] = useState('All');
  
 
@@ -71,19 +71,23 @@ function App(props) {
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask = {deleteTask}
       editTask = {editTask}
-      
     />
 
   )) ;
   
   
+
+
+
+
+  
+
+  
   
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
-
     
-    // localStorage.setItem('taskList', JSON.stringify([...tasks, newTask]));
     
   }
   
