@@ -9,7 +9,7 @@ function Header() {
 return (
     <div className="header-container">
         <h1 className="header-text">
-            To Do List
+            Todo List
         </h1>
     </div>
   )
