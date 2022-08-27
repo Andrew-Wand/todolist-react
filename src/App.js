@@ -3,6 +3,7 @@ import Footer from "./Components/Footer";
 import ToDoList from "./Components/ToDoList";
 import Form from "./Components/Form";
 import FilterButton from "./Components/FilterButton";
+import SearchBar from "./Components/SearchBar";
 import { useEffect, useState } from "react";
 import { nanoid } from 'nanoid'
 
@@ -15,6 +16,9 @@ const FILTER_MAP = {
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
+
+
+
 function App(props) {
   
   
@@ -22,6 +26,7 @@ function App(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
   const [filter, setFilter] = useState('All');
+
  
 
   const filterList = FILTER_NAMES.map((name) => (
@@ -62,6 +67,7 @@ function App(props) {
   
   const taskList = tasks
   .filter(FILTER_MAP[filter])
+  
   .map(task => (
     <ToDoList
       id={task.id}
@@ -76,6 +82,24 @@ function App(props) {
   )) ;
   
   
+
+  function search(search){
+    let currentTodos = [];
+    let newList = [];
+    if (search !== "") {
+      currentTodos = tasks;
+      newList = currentTodos.filter(todo => {
+        const lc = todo.name.toLowerCase();
+        const filter = search.toLowerCase();
+        return lc.includes(filter);
+      })
+    } else  {
+      newList = tasks;
+    }
+    setTasks(newList)
+
+    console.log(search);
+  }
 
 
 
@@ -97,7 +121,9 @@ function App(props) {
   return (
    <div className="App">
       <Header />
-      
+
+    
+      <SearchBar search={search} />
       <Form addTask = {addTask}/>
       <h2 className="remaining-text">
         {remainingText}
