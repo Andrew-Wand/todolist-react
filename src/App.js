@@ -27,6 +27,9 @@ function App(props) {
 
   const [filter, setFilter] = useState('All');
 
+
+  
+
  
 
   const filterList = FILTER_NAMES.map((name) => (
@@ -93,12 +96,16 @@ function App(props) {
         const filter = search.toLowerCase();
         return lc.includes(filter);
       })
-    } else  {
-      newList = tasks;
+      
+    } else if (search === '') {
+      newList = props.tasks
+      
+      
     }
     setTasks(newList)
 
     console.log(search);
+    console.log(tasks);
   }
 
 
@@ -111,6 +118,7 @@ function App(props) {
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
     setTasks([...tasks, newTask]);
+    
     
     
   }
