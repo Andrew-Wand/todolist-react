@@ -28,7 +28,7 @@ function App(props) {
   const [filter, setFilter] = useState('All');
 
 
-  
+
 
  
 
@@ -52,7 +52,9 @@ function App(props) {
   
   function deleteTask(id) {
     const remainingTasks = tasks.filter(task => id !== task.id);
+    window.localStorage.setItem('items', JSON.stringify(remainingTasks))
     setTasks(remainingTasks);
+
   }
 
   function editTask(id, newName) {
@@ -86,27 +88,30 @@ function App(props) {
   
   
 
-  function search(search){
-    let currentTodos = [];
-    let newList = [];
-    if (search !== "") {
-      currentTodos = tasks;
-      newList = currentTodos.filter(todo => {
-        const lc = todo.name.toLowerCase();
-        const filter = search.toLowerCase();
-        return lc.includes(filter);
-      })
-      
-    } else if (search === '') {
-      newList = props.tasks
-      
-      
-    }
-    setTasks(newList)
+  // function search(search){
+  //   let currentTodos = [];
+  //   let newList = [];
+  //   if (search !== "") {
+  //     currentTodos = tasks;
+  //     newList = currentTodos.filter(todo => {
+  //       const lc = todo.name.toLowerCase();
+  //       const filter = search.toLowerCase();
+  //       return lc.includes(filter);
 
-    console.log(search);
-    console.log(tasks);
-  }
+        
+  //     })
+
+  //     setTasks(newList)
+      
+  //   } else if (search === '') {
+  //     setTasks(props.tasks);
+     
+  //   }
+    
+    
+
+ 
+  // }
 
 
 
@@ -117,13 +122,23 @@ function App(props) {
   
   function addTask(name) {
     const newTask = { id: "todo-" + nanoid(), name: name, completed: false };
-    setTasks([...tasks, newTask]);
+    
+    const updatedTasks = [...tasks, newTask];
     
     
-    
+
+    window.localStorage.setItem('items', JSON.stringify(updatedTasks))
+    setTasks(current => [...current, newTask]);
   }
   
   const remainingText = `${taskList.length} tasks remaining`;
+
+  useEffect(() => {
+    const getTodos = JSON.parse(localStorage.getItem('items'))
+    if (getTodos) {
+      setTasks(getTodos)
+    }
+  }, [])
   
   
   return (
@@ -131,7 +146,7 @@ function App(props) {
       <Header />
 
     
-      <SearchBar search={search} />
+      {/* <SearchBar search={search} /> */}
       <Form addTask = {addTask}/>
       <h2 className="remaining-text">
         {remainingText}
