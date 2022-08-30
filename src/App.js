@@ -64,6 +64,8 @@ function App(props) {
       }
       return task;
     })
+
+    window.localStorage.setItem('items', JSON.stringify(editedTaskList))
     setTasks(editedTaskList)
   }
 
