@@ -46,6 +46,8 @@ function App(props) {
       }
       return task;
     });
+
+    window.localStorage.setItem('items', JSON.stringify(updatedTasks))
     setTasks(updatedTasks);
   }
 
