@@ -40,6 +40,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1em;
+
   flex-direction: column;
 }
 
@@ -61,4 +62,5 @@ body {
   width: 100%;
   text-align: center;
   padding: 1em;
+  color: #fff;
 }
