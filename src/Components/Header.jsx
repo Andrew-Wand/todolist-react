@@ -8,8 +8,11 @@ function Header() {
   
 return (
     <div className="header-container">
+
+       <p>ph</p>
+
         <h1 className="header-text">
-            Task List
+            TASKS
         </h1>
         
     </div>

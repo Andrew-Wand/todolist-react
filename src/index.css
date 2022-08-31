@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 * {
   box-sizing: border-box;
@@ -16,18 +16,22 @@ body {
 
 /* Header */
 .header-container {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 2em;
-
   top: 0;
   text-align: right;
+  display: flex;
+  justify-content: space-between;
 
 }
 
 .header-text {
-  font-family: 'Mukta', sans-serif;
-  color: #393E46;
+  font-family: 'Ubuntu', sans-serif;
+  color: #73777B;
   margin-top: 0;
+  letter-spacing: 1px;
+  padding: .5em;
+  
 }
 
 
@@ -39,14 +43,19 @@ body {
   justify-content: center;
   padding: 1em;
 
-  flex-direction: column;
 }
 
 .task-input {
   font-size: 28px;
-  border-radius: 3px;
+  border-radius: 12px;
   outline: none;
   border: none;
+  background-color: #eef4f7;
+  position: relative;
+}
+
+.add-btn {
+  position: absolute;
 }
 
 
