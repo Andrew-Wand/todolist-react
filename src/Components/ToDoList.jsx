@@ -8,7 +8,7 @@ function ToDoList(props) {
   const [isEdit, setIsEdit] = useState(false);
   const [newName, setNewName] = useState('');
   
-
+  const [completedTask, setCompletedTask] = useState(props.completed);
 
 
 
@@ -30,6 +30,10 @@ function ToDoList(props) {
       setNewName(e.target.value);
   }
 
+  const handleCheckbox = () => {
+    setCompletedTask(!completedTask)
+  }
+
   const showEdit = (
     <form action="submit" className="edit-form" onSubmit={handleSubmit}>
         <div>
@@ -38,7 +42,7 @@ function ToDoList(props) {
         <button type='submit'>Save</button>
 
         <button type='button' onClick={() => setIsEdit(false)}>Cancel</button>
-
+    
         
     </form>
 )
@@ -54,8 +58,10 @@ function ToDoList(props) {
       <input id={props.id} 
               type="checkbox" 
               defaultChecked={props.completed} 
-              onChange={() => props.toggleTaskCompleted(props.id)} />
-        <label htmlFor={props.id} className="todo-label">{props.name}</label>
+              onChange={() => props.toggleTaskCompleted(props.id)}
+              className={completedTask ? 'taskComplete todo-label' : null}
+              onClick={handleCheckbox} />
+        <label htmlFor={props.id} className={completedTask ? 'taskComplete' : null}>{props.name}</label>
       </div>
 
     <div className="right-side">

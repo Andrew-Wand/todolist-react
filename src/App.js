@@ -165,7 +165,10 @@ function App(props) {
 
       </section>
       
-      {filterList}
+      <section className="filter-list">
+        {filterList}
+      </section>
+      
       <ul className="task-list">
         {taskList}
       </ul>
