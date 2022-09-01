@@ -38,9 +38,10 @@ body {
   height: 25px;
   outline: none;
   border: none;
-  font-size: 26px;
-  padding: .7em 1.3em;
-  color: rgba(0, 0, 0, .4)
+  font-size: 32px;
+  padding: .5em 1em;
+  color: rgba(0, 0, 0, .4);
+  cursor: pointer;
 }
 
 
@@ -51,7 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1em;
-
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 .task-input {
@@ -66,6 +67,7 @@ body {
   padding: .6em;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
   
+  
 }
 
 
@@ -78,6 +80,22 @@ body {
   cursor: pointer;
   color: #457dae;
 }
+
+
+
+.list-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.remaining-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  color: #73777B;
+}
+
+
 
 
 

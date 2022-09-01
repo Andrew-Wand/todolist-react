@@ -152,9 +152,19 @@ function App(props) {
     
       {/* <SearchBar search={search} /> */}
       <Form addTask = {addTask}/>
-      <h2 className="remaining-text">
-        {remainingText}
-      </h2>
+
+
+      <section className="list-title">
+
+        <h3 className="remaining-text">TO DO</h3>
+
+        <h2 className="remaining-text">
+          {remainingText}
+        </h2>
+
+
+      </section>
+      
       {filterList}
       <ul className="task-list">
         {taskList}
