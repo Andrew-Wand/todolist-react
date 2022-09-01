@@ -1,15 +1,23 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 function Header() {
   
   
-  
+  const infoIcon = <FontAwesomeIcon icon={faCircleInfo} />
   
   
 return (
+    
     <div className="header-container">
 
-       <p>ph</p>
+        <button className='info-btn'>
+            <i>{infoIcon}</i>
+        </button>
+           
+        
+       
 
         <h1 className="header-text">
             TASKS

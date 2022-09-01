@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 function Form(props) {
 
-    const [name, setName] = useState('')
-   
-    
- 
+    // Icons
+
+    const addIcon = <FontAwesomeIcon icon={faCirclePlus} />
+
+
+    const [name, setName] = useState('');
     
 
     const handleSubmit = (e) => {
@@ -36,9 +39,12 @@ function Form(props) {
                 className="task-input" 
                 value={name} 
                 onChange={handleChange} 
-                name='text' 
+                name='text'
+                placeholder='Add Item' 
                 />
-            <button className="add-btn" type='submit'>Add</button>
+            <button className="add-btn" type='submit'>
+                    <i>{addIcon}</i>
+            </button>
         </form>
    
   )
