@@ -31,7 +31,8 @@ function ToDoList(props) {
   }
 
   const handleCheckbox = () => {
-    setCompletedTask(!completedTask)
+    setCompletedTask(!completedTask);
+    
   }
 
   const showEdit = (
@@ -54,16 +55,20 @@ function ToDoList(props) {
 
 
     <div className="task-container">
+      
       <div className="left-side">
-      <input id={props.id} 
+        <input id={props.id} 
               type="checkbox" 
               defaultChecked={props.completed} 
               onChange={() => props.toggleTaskCompleted(props.id)}
-              className={completedTask ? 'taskComplete todo-label' : null}
-              onClick={handleCheckbox} />
-        <label htmlFor={props.id} className={completedTask ? 'taskComplete' : null}>{props.name}</label>
+              className={completedTask ? 'taskComplete checkbox' : 'checkbox'}
+              onClick={handleCheckbox}
+               />
+          <label htmlFor="checkbox" className={completedTask ? 'taskComplete checkbox' : 'checkbox'} onClick={handleCheckbox} onChange={() => props.toggleTaskCompleted(props.id)} ></label>
       </div>
-
+      <label  htmlFor={props.id} className={completedTask ? 'taskComplete todo-label' : 'todo-label'}>{props.name}</label>
+    
+    
     <div className="right-side">
       <button className="edit-btn" onClick={() => setIsEdit(true)}>Edit</button>
       <button className="delete-btn" onClick={() => props.deleteTask(props.id)}>Delete</button>

@@ -155,15 +155,8 @@ body {
   justify-content: space-between;
 }
 
-.todo-label {
-  font-family: 'Ubuntu', sans-serif;
-  color: #73777B;
-  margin-left: 1em;
-}
 
-.left-side {
 
-}
 
 .right-side {
  
@@ -175,6 +168,23 @@ body {
 
 .taskComplete {
   text-decoration: line-through;
+}
+
+ .todo-label {
+  font-family: 'Unbuntu', sans-serif;
+  color: #73777B;
+  font-weight: bolder;
+  opacity: .6;
+  font-size: 19px;
+}
+
+/* Checkbox css */
+.checkbox {
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  transform: scale(1.5);
 }
 
 
