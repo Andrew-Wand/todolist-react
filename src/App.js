@@ -137,6 +137,9 @@ function App(props) {
   
   const remainingText = `${taskList.length} tasks remaining`;
 
+  
+  
+  
   useEffect(() => {
     const getTodos = JSON.parse(localStorage.getItem('items'))
     if (getTodos) {
