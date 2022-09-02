@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 function ToDoList(props) {
+
+  const penIcon = <FontAwesomeIcon icon={faPen} />
+  const trashIcon = <FontAwesomeIcon icon={faTrashCan} />
+
   
   
   
@@ -64,14 +69,21 @@ function ToDoList(props) {
               className={completedTask ? 'taskComplete checkbox' : 'checkbox'}
               onClick={handleCheckbox}
                />
-          <label htmlFor="checkbox" className={completedTask ? 'taskComplete checkbox' : 'checkbox'} onClick={handleCheckbox} onChange={() => props.toggleTaskCompleted(props.id)} ></label>
+          <label  htmlFor={props.id} className={completedTask ? 'taskComplete todo-label' : 'todo-label'}>{props.name}</label>
+          {/* <label htmlFor="checkbox" className={completedTask ? 'taskComplete checkbox' : 'checkbox'} onClick={handleCheckbox} onChange={() => props.toggleTaskCompleted(props.id)} ></label> */}
       </div>
-      <label  htmlFor={props.id} className={completedTask ? 'taskComplete todo-label' : 'todo-label'}>{props.name}</label>
+      
     
     
     <div className="right-side">
-      <button className="edit-btn" onClick={() => setIsEdit(true)}>Edit</button>
-      <button className="delete-btn" onClick={() => props.deleteTask(props.id)}>Delete</button>
+      <button className="task-btn" onClick={() => setIsEdit(true)}>
+          <i>{penIcon}</i>
+      </button>
+      <button className="task-btn" onClick={() => props.deleteTask(props.id)}>
+          
+          <i>{trashIcon}</i>
+
+      </button>
     </div>
         
         
