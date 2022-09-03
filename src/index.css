@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -204,9 +205,9 @@ align-items: center;
 /* Footer */
 
 .footer-container {
-  position: sticky;
+  position: fixed;
   margin-top: 13rem;
-  /* bottom: 0; */
+  bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;

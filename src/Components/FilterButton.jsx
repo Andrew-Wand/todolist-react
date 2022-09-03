@@ -4,37 +4,21 @@ import React, { useState } from 'react'
 
 function FilterButton(props) {
 
-  const [isActive, setIsActive] = useState();
- 
-  const handleClick = () => {
-    
-    setIsActive(current => !current);
 
-    // 👇️ or set to true
-    // if (!isActive) {
-    //   setIsActive(true);
-    // } 
-
-    
-
-  };
-
-
-  
- 
   return (
 
    
       <button 
-   
+      id={props.id}
       style={{
-        backgroundColor: isActive ? 'salmon' : 'gray',
-        color: isActive ? 'white' : '',
+        backgroundColor: props.isPressed ? 'salmon' : 'gray',
+        color: props.isPressed ? 'white' : 'black',
+        textDecoration: props.isPressed ? 'underline' : 'none'
       }}
       className="filter-btn" 
       type='button' 
       aria-pressed={props.isPressed} 
-      onClick={() => {props.setFilter(props.name); handleClick(); }}>
+      onClick={() => {props.setFilter(props.name); }}>
   
       
         <span>{props.name} </span>
