@@ -10,9 +10,9 @@ function Header() {
   
   
 return (
-    
+  
     <div className="header-container">
-
+<div className="top-div"></div>
         <button className='info-btn'>
             <i>{infoIcon}</i>
         </button>

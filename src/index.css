@@ -29,6 +29,7 @@ body {
   background-color: var(--background-color);
   height: 100%;
   position: relative;
+
 }
 
 
@@ -41,10 +42,12 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 2em;
-    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: rgba(255, 255, 255, 0.7); */
     width: 40%;
     margin-left: 500px;
    }
+
+  
 }
 
 
@@ -84,7 +87,15 @@ body {
 /* Desktop media queries */
 @media (min-width: 1281px) {
     .header-container {
+     
+    }
 
+    .top-div {
+      background-color: rgba(0, 0, 0, .4);
+      height: 203px;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
     }
 }
 
@@ -134,6 +145,14 @@ body {
    .task-form {
     width: 100%;
     
+   }
+
+   .add-btn {
+    right: 16.7em;
+   }
+
+   .task-input {
+    border-radius: 5px;
    }
   }
 
@@ -267,6 +286,18 @@ align-items: center;
 @media (min-width: 1281px) {
   .task-list {
     width: 100%;
+    padding-left: 0em;
+    /* border: 2px solid #000; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    
+   }
+   .task-item {
+    box-shadow: none;
+    border-bottom: 2px solid rgba(66, 65, 65, .2);
+    margin-bottom: 0em;
+    border-radius: 0;
+   
    }
 }
 
@@ -290,6 +321,13 @@ align-items: center;
   align-items: center;
   gap: 4px;
 }
+
+@media (min-width: 1281px) {
+  .toggle-theme-wrapper {
+    
+  }
+}
+
 
 .toggle-theme-wrapper span {
   font-size: 22px;
