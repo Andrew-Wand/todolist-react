@@ -149,9 +149,14 @@ function App(props) {
   
   return (
    <div className="App">
+
+    
       <Header />
     
-      {/* <SearchBar search={search} /> */}
+    
+
+  <div className="form-container">
+    <div className="form-wrapper">
       <Form addTask = {addTask}/>
 
 
@@ -165,14 +170,22 @@ function App(props) {
 
 
       </section>
-      
+
       <section className="filter-list">
         {filterList}
       </section>
-      
+
       <ul className="task-list">
         {taskList}
-      </ul>
+      </ul> 
+    </div>
+     
+      
+      
+      
+      
+      </div> 
+      
       
 
    </div>

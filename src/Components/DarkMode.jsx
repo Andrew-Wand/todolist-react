@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler} from 'react'
+
 
 function DarkMode() {
 
@@ -31,7 +31,7 @@ function DarkMode() {
       }
       
       // 5
-      const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
+      const toggleTheme= (e) => {
         if (e.target.checked) {
           setDark();
         } else {
