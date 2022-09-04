@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+import  DarkMode  from "../Components/DarkMode";
 
 function Header() {
   
@@ -15,7 +16,7 @@ return (
         <button className='info-btn'>
             <i>{infoIcon}</i>
         </button>
-           
+        <DarkMode />
         
        
 

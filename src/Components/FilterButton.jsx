@@ -11,7 +11,7 @@ function FilterButton(props) {
       <button 
       id={props.id}
       style={{
-        backgroundColor: props.isPressed ? '#60c6d7' : 'white',
+        backgroundColor: props.isPressed ? '#5579A4' : 'white',
         color: props.isPressed ? 'white' : 'black',
         textDecoration: props.isPressed ? 'underline' : 'none'
       }}

@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+
+:root {
+  --font-color: #333;
+  --background-color: #eee;
+  --link-color: cornflowerblue;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --font-color: #eee;
+  --background-color: #333;
+  --link-color: lightblue;
+}
+
+
+
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -10,7 +27,9 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  height: 100%;
+  position: relative;
 }
 
 /* background-color: #222831; */
@@ -102,7 +121,6 @@ body {
 .filter-list {
   display: flex;
   justify-content: space-evenly;
-  
   height: 50px;
  
 }
@@ -112,6 +130,7 @@ body {
 .filter-btn {
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
   color: #000;
   cursor: pointer;
   border: none;
@@ -122,19 +141,14 @@ body {
 
 
 
-
-
-
-
-
-
-
 /* Task list */
 
 .task-list {
   list-style: none;
-  margin-right: 1.7em;
+  margin-right: 1.2em;
   margin-top: 1.5em;
+  margin-left: 0;
+ padding-left: 1em;
 }
 
 .task-item {
@@ -147,6 +161,7 @@ body {
 .task-container {
   display: flex;
   justify-content: space-between;
+  
 }
 
 
@@ -172,6 +187,7 @@ align-items: center;
   font-weight: bolder;
   font-size: 19px;
   margin-left: 1.2em;
+  
 }
 
 .todo-label.taskComplete {
@@ -203,21 +219,63 @@ align-items: center;
 
 
 
-/* Footer */
-
-.footer-container {
-  position: fixed;
-  margin-top: 13rem;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  /* padding: 1em */
-  background-color: #73777B;
-  height: 4em;
+/* Custom Dark Mode Toggle Element */
+.toggle-theme-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
 }
 
-.footer-list {
-    list-style-type: none;
+.toggle-theme-wrapper span {
+  font-size: 22px;
+}
 
+.toggle-theme {
+  position: relative;
+  display: inline-block;
+  height: 30px;
+  width: 60px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 22px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:checked + .slider {
+  background-color: cornflowerblue;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

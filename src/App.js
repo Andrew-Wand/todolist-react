@@ -1,5 +1,4 @@
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import ToDoList from "./Components/ToDoList";
 import Form from "./Components/Form";
 import FilterButton from "./Components/FilterButton";
@@ -151,7 +150,6 @@ function App(props) {
   return (
    <div className="App">
       <Header />
-
     
       {/* <SearchBar search={search} /> */}
       <Form addTask = {addTask}/>
@@ -177,7 +175,6 @@ function App(props) {
       </ul>
       
 
-      <Footer />
    </div>
   );
 }
