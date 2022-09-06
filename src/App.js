@@ -144,7 +144,7 @@ function App(props) {
     if (getTodos) {
       setTasks(getTodos)
     }
-  }, [])
+  }, []);
   
   
   return (
