@@ -43,11 +43,15 @@ function ToDoList(props) {
   const showEdit = (
     <form action="submit" className="edit-form" onSubmit={handleSubmit}>
         <div>
-          <input type="text" onChange={handleChange} defaultValue={props.name} />
+          <input type="text" onChange={handleChange} defaultValue={props.name} className='edit-input' />
         </div>
-        <button type='submit'>Save</button>
 
-        <button type='button' onClick={() => setIsEdit(false)}>Cancel</button>
+        <div>
+          <button type='submit' className='task-btn'>Save</button>
+
+          <button type='button' className='task-btn' onClick={() => setIsEdit(false)}>Cancel</button>
+        </div>
+        
     
         
     </form>

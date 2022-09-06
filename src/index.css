@@ -237,9 +237,7 @@ body {
 }
 
 
-.edit-form {
-  display: flex;
-}
+
 
 .taskComplete {
   text-decoration: line-through;
@@ -300,6 +298,25 @@ align-items: center;
    
    }
 }
+
+
+
+
+/* Tasklist edit */
+.edit-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-input {
+  padding: .5em;
+  
+}
+
+
+
+
+
 
 
 /* Checkbox css */
