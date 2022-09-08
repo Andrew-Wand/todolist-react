@@ -74,7 +74,7 @@ function ToDoList(props) {
               onClick={handleCheckbox}
                />
           <label  htmlFor={props.id} className={completedTask ? 'taskComplete todo-label' : 'todo-label'}>{props.name}</label>
-          {/* <label htmlFor="checkbox" className={completedTask ? 'taskComplete checkbox' : 'checkbox'} onClick={handleCheckbox} onChange={() => props.toggleTaskCompleted(props.id)} ></label> */}
+          
       </div>
       
     
