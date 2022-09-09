@@ -159,8 +159,6 @@ function App(props) {
   <div className="form-container">
     <div className="form-wrapper">
       <Form addTask = {addTask}/>
-
-
       <section className="list-title">
 
         <h3 className="remaining-text">TO DO</h3>
@@ -169,13 +167,11 @@ function App(props) {
           {remainingText}
         </h2>
 
-
       </section>
 
       <section className="filter-list">
         {filterList}
       </section>
-
       <ul className="task-list">
         {taskList}
       </ul> 
